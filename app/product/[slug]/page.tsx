@@ -112,6 +112,21 @@ export default function ProductDetailPage() {
 
             <p className="text-gray-400 mb-6 leading-relaxed">{product.description}</p>
 
+            {/* Key Features */}
+            {product.keyFeatures && product.keyFeatures.length > 0 && (
+              <div className="bg-[#1a1a1a] rounded-lg p-6 mb-6 border border-gray-800">
+                <h3 className="font-bold text-lg mb-4 text-white">Key Features</h3>
+                <ul className="space-y-2">
+                  {product.keyFeatures.map((feature, idx) => (
+                    <li key={idx} className="flex items-start space-x-2 text-gray-300">
+                      <span className="text-[#4FBFAD] mt-1 flex-shrink-0">•</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {/* Specifications */}
             {product.specifications && (
               <div className="bg-[#1a1a1a] rounded-lg p-6 mb-6 border border-gray-800">

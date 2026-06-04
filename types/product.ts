@@ -10,6 +10,7 @@ export interface Product {
   image: string;
   images?: string[];
   description: string;
+  keyFeatures?: string[];
   specifications?: {
     height?: string;
     topDiameter?: string;
