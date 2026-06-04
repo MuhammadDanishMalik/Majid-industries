@@ -20,6 +20,8 @@ export interface Product {
     bucketWeight: string;
     lidWeight: string;
     handleWeight: string;
+    containerLabel?: string; // e.g. 'Jar', 'Can' — defaults to 'Bucket'
+    hideHandle?: boolean;    // for jars that have no handle row
   };
   specifications?: {
     height?: string;

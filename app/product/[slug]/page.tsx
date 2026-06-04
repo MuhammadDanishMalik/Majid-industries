@@ -142,13 +142,13 @@ export default function ProductDetailPage() {
                         <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center border-r border-[#1a5a50] text-xs">Height</th>
                         <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center border-r border-[#1a5a50] text-xs">Top</th>
                         <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center border-r border-[#1a5a50] text-xs">Bottom</th>
-                        <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center border-r border-[#1a5a50] text-xs">Bucket</th>
+                        <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center border-r border-[#1a5a50] text-xs">{product.dimensions.containerLabel ?? 'Bucket'}</th>
                         <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center text-xs">{product.dimensions.bucketWeight}</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="bg-[#1a1a1a]">
-                        <td rowSpan={2} className="py-2 px-3 text-center text-white border-r border-gray-700 font-medium">{product.dimensions.height}</td>
+                        <td rowSpan={product.dimensions.hideHandle ? 2 : 3} className="py-2 px-3 text-center text-white border-r border-gray-700 font-medium">{product.dimensions.height}</td>
                         <td className="py-2 px-3 text-center text-gray-300 border-r border-gray-700">{product.dimensions.topOuter}</td>
                         <td className="py-2 px-3 text-center text-gray-300 border-r border-gray-700">{product.dimensions.bottomOuter}</td>
                         <td className="py-2 px-3 text-center text-gray-400 border-r border-gray-700 text-xs font-medium">Lid</td>
@@ -157,14 +157,24 @@ export default function ProductDetailPage() {
                       <tr className="bg-[#111]">
                         <td className="py-2 px-3 text-center text-gray-400 border-r border-gray-700 text-xs">{product.dimensions.topInner}</td>
                         <td className="py-2 px-3 text-center text-gray-400 border-r border-gray-700 text-xs">{product.dimensions.bottomInner}</td>
-                        <td className="py-2 px-3 text-center text-gray-400 border-r border-gray-700 text-xs font-medium">Handle</td>
-                        <td className="py-2 px-3 text-center text-gray-400 text-xs">{product.dimensions.handleWeight}</td>
+                        {!product.dimensions.hideHandle ? (
+                          <>
+                            <td className="py-2 px-3 text-center text-gray-400 border-r border-gray-700 text-xs font-medium">Handle</td>
+                            <td className="py-2 px-3 text-center text-gray-400 text-xs">{product.dimensions.handleWeight}</td>
+                          </>
+                        ) : (
+                          <>
+                            <td className="py-2 px-3 border-r border-gray-700"></td>
+                            <td className="py-2 px-3"></td>
+                          </>
+                        )}
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             )}
+
 
             {/* Specifications */}
             {product.specifications && (
