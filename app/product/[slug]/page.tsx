@@ -127,6 +127,45 @@ export default function ProductDetailPage() {
               </div>
             )}
 
+            {/* Dimensions & Weight Table */}
+            {product.dimensions && (
+              <div className="mb-6">
+                <h3 className="font-bold text-lg mb-3 text-white">Dimensions & Weight</h3>
+                <div className="rounded-lg overflow-hidden border border-gray-700">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr>
+                        <th colSpan={3} className="bg-[#2a7a6e] text-white font-bold py-2 px-3 text-center border-r border-[#1a5a50]">Dimensions</th>
+                        <th colSpan={2} className="bg-[#2a7a6e] text-white font-bold py-2 px-3 text-center">Weight</th>
+                      </tr>
+                      <tr>
+                        <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center border-r border-[#1a5a50] text-xs">Height</th>
+                        <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center border-r border-[#1a5a50] text-xs">Top</th>
+                        <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center border-r border-[#1a5a50] text-xs">Bottom</th>
+                        <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center border-r border-[#1a5a50] text-xs">Bucket</th>
+                        <th className="bg-[#1f6b5f] text-white font-semibold py-1.5 px-3 text-center text-xs">{product.dimensions.bucketWeight}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="bg-[#1a1a1a]">
+                        <td rowSpan={2} className="py-2 px-3 text-center text-white border-r border-gray-700 font-medium">{product.dimensions.height}</td>
+                        <td className="py-2 px-3 text-center text-gray-300 border-r border-gray-700">{product.dimensions.topOuter}</td>
+                        <td className="py-2 px-3 text-center text-gray-300 border-r border-gray-700">{product.dimensions.bottomOuter}</td>
+                        <td className="py-2 px-3 text-center text-gray-400 border-r border-gray-700 text-xs font-medium">Lid</td>
+                        <td className="py-2 px-3 text-center text-gray-300">{product.dimensions.lidWeight}</td>
+                      </tr>
+                      <tr className="bg-[#111]">
+                        <td className="py-2 px-3 text-center text-gray-400 border-r border-gray-700 text-xs">{product.dimensions.topInner}</td>
+                        <td className="py-2 px-3 text-center text-gray-400 border-r border-gray-700 text-xs">{product.dimensions.bottomInner}</td>
+                        <td className="py-2 px-3 text-center text-gray-400 border-r border-gray-700 text-xs font-medium">Handle</td>
+                        <td className="py-2 px-3 text-center text-gray-400 text-xs">{product.dimensions.handleWeight}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
             {/* Specifications */}
             {product.specifications && (
               <div className="bg-[#1a1a1a] rounded-lg p-6 mb-6 border border-gray-800">

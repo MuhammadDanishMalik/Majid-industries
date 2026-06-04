@@ -11,6 +11,16 @@ export interface Product {
   images?: string[];
   description: string;
   keyFeatures?: string[];
+  dimensions?: {
+    height: string;
+    topOuter: string;
+    topInner: string;
+    bottomOuter: string;
+    bottomInner: string;
+    bucketWeight: string;
+    lidWeight: string;
+    handleWeight: string;
+  };
   specifications?: {
     height?: string;
     topDiameter?: string;
