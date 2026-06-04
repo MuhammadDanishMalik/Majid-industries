@@ -5,9 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Search, ChevronDown } from 'lucide-react';
 import { categories } from '@/data/products';
+import SearchModal from '@/components/SearchModal';
 
 export default function Header() {
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#0a0a0a]">
@@ -79,13 +81,19 @@ export default function Header() {
 
             {/* Right Icons */}
             <div className="flex items-center space-x-6">
-              <button className="hover:text-[#4FBFAD] text-gray-300">
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="hover:text-[#4FBFAD] text-gray-300 transition-colors"
+                aria-label="Open search"
+              >
                 <Search className="w-5 h-5" />
               </button>
             </div>
           </div>
         </div>
       </nav>
+
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
   );
 }
