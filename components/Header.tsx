@@ -19,9 +19,9 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <div className="w-[75px] h-[75px] relative">
+              <div className="w-[90px] h-[90px] relative">
                 <Image
-                  src="/trademark-seal.png"
+                  src="/majid-logo.png"
                   alt="Majid Industries"
                   fill
                   className="object-contain"
