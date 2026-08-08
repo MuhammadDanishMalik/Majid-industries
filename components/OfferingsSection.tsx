@@ -12,24 +12,49 @@ const offerings = [
     title: 'Smart Series Buckets',
     image: '/offerings/smart-series.jpg',
     description: 'Durable, Hygienic, Ready to serve',
+    href: '/category/smart-series-buckets',
   },
   {
     id: 2,
-    title: 'Premium Ice Cream Buckets',
-    image: '/offerings/ice-cream.jpg',
-    description: 'Food-grade excellence',
+    title: 'Signature Series Buckets',
+    image: '/offerings/signature-series.jpg',
+    description: 'Premium heavy-duty packaging',
+    href: '/category/signature-series-buckets',
   },
   {
     id: 3,
-    title: 'PET Jars',
-    image: '/offerings/jars.jpg',
-    description: 'Crystal clear & versatile',
+    title: 'Square Series Buckets',
+    image: '/offerings/square-series.jpg',
+    description: 'Space-efficient & stackable',
+    href: '/category/square-series-buckets',
   },
   {
     id: 4,
+    title: 'Jars',
+    image: '/offerings/jars.jpg',
+    description: 'Crystal clear & versatile',
+    href: '/category/jars',
+  },
+  {
+    id: 5,
     title: 'Bottles & Containers',
     image: '/offerings/bottles.jpg',
     description: 'For every liquid need',
+    href: '/category/bottles',
+  },
+  {
+    id: 6,
+    title: 'Jerry Cans',
+    image: '/offerings/jerry-cans.jpg',
+    description: 'Heavy-duty liquid storage',
+    href: '/category/jerry-cans',
+  },
+  {
+    id: 7,
+    title: 'Household Products',
+    image: '/offerings/household.jpg',
+    description: 'Everyday storage solutions',
+    href: '/category/household-products',
   },
 ];
 
@@ -89,7 +114,7 @@ export default function OfferingsSection() {
               viewport={{ once: true }}
               className="flex-shrink-0 w-80"
             >
-              <Link href={`/category/${offering.title.toLowerCase().replace(/ /g, '-')}`}>
+              <Link href={offering.href}>
                 <div className="relative h-80 rounded-lg overflow-hidden group cursor-pointer">
                   <Image
                     src={offering.image}

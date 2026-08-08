@@ -3,6 +3,7 @@ import { Product, Category } from '@/types/product';
 export const products: Product[] = [
   // ============ SMART SERIES BUCKETS ============
   {
+    
     id: 'smart-500g',
     name: '1/2kg Bucket Smart Series',
     slug: 'half-kg-smart-series-bucket',
@@ -1604,7 +1605,7 @@ export const categories: Category[] = [
     name: 'Signature Series Buckets',
     slug: 'signature-series-buckets',
     description: 'Premium signature series buckets with enhanced quality and durability',
-    image: '/categories/smart-series.jpg',
+    image: '/categories/signature-series.jpg',
   },
   {
     id: 'square-series',
@@ -1639,6 +1640,6 @@ export const categories: Category[] = [
     name: 'Household Products',
     slug: 'household-products',
     description: 'Medical boxes, fruit baskets, and household storage solutions',
-    image: '/categories/smart-series.jpg',
+    image: '/categories/household.jpg',
   },
 ];
